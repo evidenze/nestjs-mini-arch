@@ -8,14 +8,14 @@ export function generateFeature(name: string, options: GeneratorOptions = {}): v
   const filePath = path.join(outputPath, fileName);
 
   const content = `import { Injectable } from '@nestjs/common';
-import { Feature, LucidFeature } from 'nest-lucid';
+import { Feature, MiniFeature } from 'mini';
 
 export interface ${className}Data {
   // Define the data interface for this feature
 }
 
 @Injectable()
-@LucidFeature('${name}')
+@MiniFeature('${name}')
 export class ${className} extends Feature {
   /**
    * Execute the ${name} feature

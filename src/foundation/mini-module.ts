@@ -1,7 +1,7 @@
 import { DynamicModule, Global, Module } from '@nestjs/common';
-import { LucidRegistry } from './lucid-registry';
+import { MiniRegistry } from './mini-registry';
 
-export interface LucidModuleOptions {
+export interface MiniModuleOptions {
   services?: any[];
   domains?: any[];
   autoRegister?: boolean;
@@ -9,16 +9,16 @@ export interface LucidModuleOptions {
 
 @Global()
 @Module({})
-export class LucidModule {
-  static forRoot(options: LucidModuleOptions = {}): DynamicModule {
+export class MiniModule {
+  static forRoot(options: MiniModuleOptions = {}): DynamicModule {
     const providers = [
-      LucidRegistry,
+      MiniRegistry,
       ...(options.services || []),
       ...(options.domains || []),
     ];
 
     return {
-      module: LucidModule,
+      module: MiniModule,
       providers,
       exports: providers,
       global: true,
@@ -26,20 +26,20 @@ export class LucidModule {
   }
 
   static forRootAsync(options: {
-    useFactory: (...args: any[]) => Promise<LucidModuleOptions> | LucidModuleOptions;
+    useFactory: (...args: any[]) => Promise<MiniModuleOptions> | MiniModuleOptions;
     inject?: any[];
   }): DynamicModule {
     return {
-      module: LucidModule,
+      module: MiniModule,
       providers: [
         {
-          provide: 'LUCID_OPTIONS',
+          provide: 'MINI_OPTIONS',
           useFactory: options.useFactory,
           inject: options.inject || [],
         },
-        LucidRegistry,
+        MiniRegistry,
       ],
-      exports: [LucidRegistry],
+      exports: [MiniRegistry],
       global: true,
     };
   }

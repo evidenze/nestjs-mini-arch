@@ -9,8 +9,8 @@ import { generateDomain } from '../generators/domain-generator';
 const program = new Command();
 
 program
-  .name('nest-lucid')
-  .description('CLI for Nest Lucid architecture')
+  .name('mini')
+  .description('CLI for Mini architecture')
   .version('1.0.0');
 
 program

@@ -1,33 +1,33 @@
 import { Injectable } from '@nestjs/common';
-import { Job, LucidJob } from 'nest-lucid';
+import { Job, MiniJob } from 'mini';
 
-export interface TestEmailJobData {
+export interface TestProcessJobData {
   // Define the data interface for this job
 }
 
 @Injectable()
-@LucidJob('TestEmail')
-export class TestEmailJob extends Job {
+@MiniJob('TestProcess')
+export class TestProcessJob extends Job {
   /**
-   * Execute the TestEmail job
+   * Execute the TestProcess job
    * @param data - The data required to execute this job
    */
-  async handle(data: TestEmailJobData): Promise<any> {
+  async handle(data: TestProcessJobData): Promise<any> {
     // TODO: Implement job logic here
-    console.log('Executing TestEmailJob with data:', data);
+    console.log('Executing TestProcessJob with data:', data);
     
     // Example job implementation
     try {
       // Your business logic here
       const result = {
         success: true,
-        message: 'TestEmailJob executed successfully',
+        message: 'TestProcessJob executed successfully',
         data: data,
       };
       
       return result;
     } catch (error) {
-      throw new Error(`TestEmailJob failed: ${error.message}`);
+      throw new Error(`TestProcessJob failed: ${error.message}`);
     }
   }
 }

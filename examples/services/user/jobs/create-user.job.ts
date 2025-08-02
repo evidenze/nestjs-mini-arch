@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Job, LucidJob } from 'nest-lucid';
+import { Job, MiniJob } from 'mini';
 
 export interface CreateUserJobData {
   email: string;
@@ -9,7 +9,7 @@ export interface CreateUserJobData {
 }
 
 @Injectable()
-@LucidJob('CreateUser')
+@MiniJob('CreateUser')
 export class CreateUserJob extends Job {
   async handle(data: CreateUserJobData): Promise<any> {
     console.log(`Creating user: ${data.email}`);

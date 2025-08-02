@@ -3,10 +3,10 @@ import 'reflect-metadata';
 /**
  * Decorator to mark a class as a Job
  */
-export function LucidJob(name?: string) {
+export function MiniJob(name?: string) {
   return function (target: any) {
-    Reflect.defineMetadata('lucid:type', 'job', target);
-    Reflect.defineMetadata('lucid:name', name || target.name, target);
+    Reflect.defineMetadata('mini:type', 'job', target);
+    Reflect.defineMetadata('mini:name', name || target.name, target);
     return target;
   };
 }
@@ -14,10 +14,10 @@ export function LucidJob(name?: string) {
 /**
  * Decorator to mark a class as a Feature
  */
-export function LucidFeature(name?: string) {
+export function MiniFeature(name?: string) {
   return function (target: any) {
-    Reflect.defineMetadata('lucid:type', 'feature', target);
-    Reflect.defineMetadata('lucid:name', name || target.name, target);
+    Reflect.defineMetadata('mini:type', 'feature', target);
+    Reflect.defineMetadata('mini:name', name || target.name, target);
     return target;
   };
 }
@@ -25,10 +25,10 @@ export function LucidFeature(name?: string) {
 /**
  * Decorator to mark a class as a Service
  */
-export function LucidService(name: string) {
+export function MiniService(name: string) {
   return function (target: any) {
-    Reflect.defineMetadata('lucid:type', 'service', target);
-    Reflect.defineMetadata('lucid:name', name, target);
+    Reflect.defineMetadata('mini:type', 'service', target);
+    Reflect.defineMetadata('mini:name', name, target);
     return target;
   };
 }
@@ -36,10 +36,10 @@ export function LucidService(name: string) {
 /**
  * Decorator to mark a class as a Domain
  */
-export function LucidDomain(name?: string) {
+export function MiniDomain(name?: string) {
   return function (target: any) {
-    Reflect.defineMetadata('lucid:type', 'domain', target);
-    Reflect.defineMetadata('lucid:name', name || target.name, target);
+    Reflect.defineMetadata('mini:type', 'domain', target);
+    Reflect.defineMetadata('mini:name', name || target.name, target);
     return target;
   };
 }
@@ -47,27 +47,27 @@ export function LucidDomain(name?: string) {
 /**
  * Get metadata from a class
  */
-export function getLucidMetadata(target: any, key: string): any {
-  return Reflect.getMetadata(`lucid:${key}`, target);
+export function getMiniMetadata(target: any, key: string): any {
+  return Reflect.getMetadata(`mini:${key}`, target);
 }
 
 /**
- * Check if a class is a Lucid component
+ * Check if a class is a Mini component
  */
-export function isLucidComponent(target: any): boolean {
-  return Reflect.hasMetadata('lucid:type', target);
+export function isMiniComponent(target: any): boolean {
+  return Reflect.hasMetadata('mini:type', target);
 }
 
 /**
- * Get the type of a Lucid component
+ * Get the type of a Mini component
  */
-export function getLucidType(target: any): string | undefined {
-  return Reflect.getMetadata('lucid:type', target);
+export function getMiniType(target: any): string | undefined {
+  return Reflect.getMetadata('mini:type', target);
 }
 
 /**
- * Get the name of a Lucid component
+ * Get the name of a Mini component
  */
-export function getLucidName(target: any): string | undefined {
-  return Reflect.getMetadata('lucid:name', target);
+export function getMiniName(target: any): string | undefined {
+  return Reflect.getMetadata('mini:name', target);
 }

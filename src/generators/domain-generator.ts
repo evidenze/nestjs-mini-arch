@@ -8,10 +8,10 @@ export function generateDomain(name: string, options: GeneratorOptions = {}): vo
   const filePath = path.join(outputPath, fileName);
 
   const content = `import { Injectable } from '@nestjs/common';
-import { Domain, LucidDomain } from 'nest-lucid';
+import { Domain, MiniDomain } from 'mini';
 
 @Injectable()
-@LucidDomain('${name}')
+@MiniDomain('${name}')
 export class ${className} extends Domain {
   getName(): string {
     return '${name}';

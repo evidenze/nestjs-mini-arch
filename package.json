@@ -1,11 +1,11 @@
 {
-  "name": "nest-lucid",
+  "name": "mini",
   "version": "1.0.0",
-  "description": "A Laravel Lucid-inspired architectural framework for NestJS applications",
+  "description": "A clean architectural framework for NestJS applications inspired by Laravel Lucid",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "nest-lucid": "dist/cli/index.js"
+    "mini": "dist/cli/index.js"
   },
   "scripts": {
     "build": "tsc",
@@ -21,22 +21,22 @@
   "keywords": [
     "nestjs",
     "architecture",
-    "lucid",
+    "mini",
     "clean-architecture",
     "typescript",
     "framework",
     "microservices"
   ],
-  "author": "Nest Lucid Team",
+  "author": "Mini Team",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/nest-lucid.git"
+    "url": "https://github.com/your-username/mini.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/nest-lucid/issues"
+    "url": "https://github.com/your-username/mini/issues"
   },
-  "homepage": "https://github.com/your-username/nest-lucid#readme",
+  "homepage": "https://github.com/your-username/mini#readme",
   "dependencies": {
     "@nestjs/common": "^9.0.0 || ^10.0.0",
     "@nestjs/core": "^9.0.0 || ^10.0.0",

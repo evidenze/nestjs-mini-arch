@@ -14,7 +14,7 @@ export interface DomainInterface {
   getName(): string;
 }
 
-export interface LucidConfig {
+export interface MiniConfig {
   services?: any[];
   domains?: any[];
   jobs?: any[];

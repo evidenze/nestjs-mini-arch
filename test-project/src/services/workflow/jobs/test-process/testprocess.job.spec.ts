@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { TestEmailJob, TestEmailJobData } from './testemail.job';
+import { TestProcessJob, TestProcessJobData } from './testprocess.job';
 
-describe('TestEmailJob', () => {
-  let job: TestEmailJob;
+describe('TestProcessJob', () => {
+  let job: TestProcessJob;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [TestEmailJob],
+      providers: [TestProcessJob],
     }).compile();
 
-    job = module.get<TestEmailJob>(TestEmailJob);
+    job = module.get<TestProcessJob>(TestProcessJob);
   });
 
   it('should be defined', () => {
@@ -17,7 +17,7 @@ describe('TestEmailJob', () => {
   });
 
   it('should execute successfully', async () => {
-    const testData: TestEmailJobData = {
+    const testData: TestProcessJobData = {
       // Add test data here
     };
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Feature, LucidFeature } from 'nest-lucid';
+import { Feature, MiniFeature } from 'mini';
 import { CreateUserJob, CreateUserJobData } from '../jobs/create-user.job';
 import { SendEmailJob } from '../../notification/jobs/send-email.job';
 
@@ -9,7 +9,7 @@ export interface UserRegistrationFeatureData {
 }
 
 @Injectable()
-@LucidFeature('UserRegistration')
+@MiniFeature('UserRegistration')
 export class UserRegistrationFeature extends Feature {
   async handle(data: UserRegistrationFeatureData): Promise<any> {
     console.log('Starting user registration process...');

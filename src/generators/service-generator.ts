@@ -29,10 +29,10 @@ export class ${className}Module {}
   const serviceFilePath = path.join(outputPath, serviceFileName);
 
   const serviceContent = `import { Injectable } from '@nestjs/common';
-import { Service, LucidService } from 'nest-lucid';
+import { Service, MiniService } from 'mini';
 
 @Injectable()
-@LucidService('${name}')
+@MiniService('${name}')
 export class ${className} extends Service {
   getName(): string {
     return '${name}';

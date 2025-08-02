@@ -8,7 +8,7 @@ export interface RegisteredComponent {
 }
 
 @Injectable()
-export class LucidRegistry {
+export class MiniRegistry {
   private components: Map<string, RegisteredComponent> = new Map();
 
   /**

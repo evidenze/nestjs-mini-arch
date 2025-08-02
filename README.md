@@ -1,13 +1,13 @@
-# Nest Lucid
+# Mini
 
-A Laravel Lucid-inspired architectural framework for NestJS applications that promotes clean, organized, and scalable code structure.
+A clean architectural framework for NestJS applications inspired by Laravel Lucid that promotes organized and scalable code structure.
 
-[![npm version](https://badge.fury.io/js/nest-lucid.svg)](https://badge.fury.io/js/nest-lucid)
+[![npm version](https://badge.fury.io/js/mini.svg)](https://badge.fury.io/js/mini)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🎯 Overview
 
-Nest Lucid brings the power and elegance of Laravel Lucid architecture to NestJS applications. It provides a structured approach to building scalable applications with clear separation of concerns, making your codebase more maintainable and testable.
+Mini brings the power and elegance of Laravel Lucid architecture to NestJS applications. It provides a structured approach to building scalable applications with clear separation of concerns, making your codebase more maintainable and testable.
 
 ## 🏗️ Architecture Components
 
@@ -26,16 +26,16 @@ Shared business logic and rules that can be reused across multiple services.
 ## 📦 Installation
 
 ```bash
-npm install nest-lucid
+npm install mini
 # or
-yarn add nest-lucid
+yarn add mini
 ```
 
 For CLI usage, install globally:
 ```bash
-npm install -g nest-lucid
+npm install -g mini
 # or
-yarn global add nest-lucid
+yarn global add mini
 ```
 
 ## 🚀 Quick Start
@@ -45,11 +45,11 @@ yarn global add nest-lucid
 ```typescript
 // app.module.ts
 import { Module } from '@nestjs/common';
-import { LucidModule } from 'nest-lucid';
+import { MiniModule } from 'mini';
 
 @Module({
   imports: [
-    LucidModule.forRoot({
+    MiniModule.forRoot({
       autoRegister: true,
     }),
   ],
@@ -60,7 +60,7 @@ export class AppModule {}
 ### 2. Create your first Job
 
 ```bash
-nest-lucid generate:job SendEmail --service notification
+mini generate:job SendEmail --service notification
 ```
 
 This generates:
@@ -68,7 +68,7 @@ This generates:
 ```typescript
 // src/services/notification/jobs/send-email/send-email.job.ts
 import { Injectable } from '@nestjs/common';
-import { Job, LucidJob } from 'nest-lucid';
+import { Job, MiniJob } from 'mini';
 
 export interface SendEmailJobData {
   to: string;
@@ -77,7 +77,7 @@ export interface SendEmailJobData {
 }
 
 @Injectable()
-@LucidJob('SendEmail')
+@MiniJob('SendEmail')
 export class SendEmailJob extends Job {
   async handle(data: SendEmailJobData): Promise<any> {
     // Email sending logic here
@@ -90,18 +90,18 @@ export class SendEmailJob extends Job {
 ### 3. Create a Feature
 
 ```bash
-nest-lucid generate:feature UserRegistration --service user
+mini generate:feature UserRegistration --service user
 ```
 
 ```typescript
 // src/services/user/features/user-registration/user-registration.feature.ts
 import { Injectable } from '@nestjs/common';
-import { Feature, LucidFeature } from 'nest-lucid';
+import { Feature, MiniFeature } from 'mini';
 import { CreateUserJob } from '../jobs/create-user/create-user.job';
 import { SendWelcomeEmailJob } from '../jobs/send-welcome-email/send-welcome-email.job';
 
 @Injectable()
-@LucidFeature('UserRegistration')
+@MiniFeature('UserRegistration')
 export class UserRegistrationFeature extends Feature {
   async handle(userData: any): Promise<any> {
     // Create user
@@ -121,24 +121,24 @@ export class UserRegistrationFeature extends Feature {
 ### 4. Create a Service
 
 ```bash
-nest-lucid generate:service User
+mini generate:service User
 ```
 
 ### 5. Create a Domain
 
 ```bash
-nest-lucid generate:domain User
+mini generate:domain User
 ```
 
 ## 🎮 CLI Commands
 
-The Nest Lucid CLI provides powerful generators to scaffold your architecture components:
+The Mini CLI provides powerful generators to scaffold your architecture components:
 
 ### Generate Job
 ```bash
-nest-lucid generate:job <name> [options]
+mini generate:job <name> [options]
 # or
-nest-lucid g:job <name> [options]
+mini g:job <name> [options]
 
 Options:
   -s, --service <service>      Specify the service name
@@ -147,9 +147,9 @@ Options:
 
 ### Generate Feature
 ```bash
-nest-lucid generate:feature <name> [options]
+mini generate:feature <name> [options]
 # or
-nest-lucid g:feature <name> [options]
+mini g:feature <name> [options]
 
 Options:
   -s, --service <service>      Specify the service name
@@ -158,9 +158,9 @@ Options:
 
 ### Generate Service
 ```bash
-nest-lucid generate:service <name> [options]
+mini generate:service <name> [options]
 # or
-nest-lucid g:service <name> [options]
+mini g:service <name> [options]
 
 Options:
   -d, --directory <directory>  Specify output directory
@@ -168,9 +168,9 @@ Options:
 
 ### Generate Domain
 ```bash
-nest-lucid generate:domain <name> [options]
+mini generate:domain <name> [options]
 # or
-nest-lucid g:domain <name> [options]
+mini g:domain <name> [options]
 
 Options:
   -d, --directory <directory>  Specify output directory
@@ -230,10 +230,10 @@ src/
 
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { Job, LucidJob } from 'nest-lucid';
+import { Job, MiniJob } from 'mini';
 
 @Injectable()
-@LucidJob('CalculateTotal')
+@MiniJob('CalculateTotal')
 export class CalculateTotalJob extends Job {
   async handle(data: { items: any[], tax: number }): Promise<number> {
     const subtotal = data.items.reduce((sum, item) => sum + item.price, 0);
@@ -246,10 +246,10 @@ export class CalculateTotalJob extends Job {
 
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { Feature, LucidFeature } from 'nest-lucid';
+import { Feature, MiniFeature } from 'mini';
 
 @Injectable()
-@LucidFeature('ProcessOrder')
+@MiniFeature('ProcessOrder')
 export class ProcessOrderFeature extends Feature {
   async handle(orderData: any): Promise<any> {
     // Validate order
@@ -285,10 +285,10 @@ export class ProcessOrderFeature extends Feature {
 
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { Domain, LucidDomain } from 'nest-lucid';
+import { Domain, MiniDomain } from 'mini';
 
 @Injectable()
-@LucidDomain('UserValidation')
+@MiniDomain('UserValidation')
 export class UserValidationDomain extends Domain {
   getName(): string {
     return 'UserValidation';
@@ -363,7 +363,7 @@ Each job should have a single responsibility and be focused on one specific task
 
 ```typescript
 // ✅ Good - Focused job
-@LucidJob('SendEmail')
+@MiniJob('SendEmail')
 export class SendEmailJob extends Job {
   async handle(data: EmailData): Promise<any> {
     // Only handles email sending
@@ -371,7 +371,7 @@ export class SendEmailJob extends Job {
 }
 
 // ❌ Bad - Too many responsibilities
-@LucidJob('HandleUser')
+@MiniJob('HandleUser')
 export class HandleUserJob extends Job {
   async handle(data: any): Promise<any> {
     // Creates user, sends email, updates analytics, etc.
@@ -383,7 +383,7 @@ export class HandleUserJob extends Job {
 Use features to orchestrate multiple jobs for complex business operations.
 
 ```typescript
-@LucidFeature('UserOnboarding')
+@MiniFeature('UserOnboarding')
 export class UserOnboardingFeature extends Feature {
   async handle(userData: any): Promise<any> {
     const user = await this.runJob(CreateUserJob, userData);
@@ -398,7 +398,7 @@ export class UserOnboardingFeature extends Feature {
 Domains should contain pure business logic without side effects.
 
 ```typescript
-@LucidDomain('Pricing')
+@MiniDomain('Pricing')
 export class PricingDomain extends Domain {
   calculateDiscount(price: number, discountPercentage: number): number {
     return price * (discountPercentage / 100);

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Job, LucidJob } from 'nest-lucid';
+import { Job, MiniJob } from 'mini';
 
 export interface SendEmailJobData {
   to: string;
@@ -8,7 +8,7 @@ export interface SendEmailJobData {
 }
 
 @Injectable()
-@LucidJob('SendEmail')
+@MiniJob('SendEmail')
 export class SendEmailJob extends Job {
   async handle(data: SendEmailJobData): Promise<any> {
     console.log(`Sending email to: ${data.to}`);

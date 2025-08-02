@@ -8,14 +8,14 @@ export function generateJob(name: string, options: GeneratorOptions = {}): void 
   const filePath = path.join(outputPath, fileName);
 
   const content = `import { Injectable } from '@nestjs/common';
-import { Job, LucidJob } from 'nest-lucid';
+import { Job, MiniJob } from 'mini';
 
 export interface ${className}Data {
   // Define the data interface for this job
 }
 
 @Injectable()
-@LucidJob('${name}')
+@MiniJob('${name}')
 export class ${className} extends Job {
   /**
    * Execute the ${name} job
