@@ -8,7 +8,7 @@ export function generateFeature(name: string, options: GeneratorOptions = {}): v
   const filePath = path.join(outputPath, fileName);
 
   const content = `import { Injectable } from '@nestjs/common';
-import { Feature, MiniFeature } from 'mini';
+import { Feature, MiniFeature } from 'nestjs-mini-arch';
 
 export interface ${className}Data {
   // Define the data interface for this feature

@@ -29,7 +29,7 @@ export class ${className}Module {}
   const serviceFilePath = path.join(outputPath, serviceFileName);
 
   const serviceContent = `import { Injectable } from '@nestjs/common';
-import { Service, MiniService } from 'mini';
+import { Service, MiniService } from 'nestjs-mini-arch';
 
 @Injectable()
 @MiniService('${name}')

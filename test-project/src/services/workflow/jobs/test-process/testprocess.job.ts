@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Job, MiniJob } from 'mini';
+import { Job, MiniJob } from 'nestjs-mini-arch';
 
 export interface TestProcessJobData {
   // Define the data interface for this job

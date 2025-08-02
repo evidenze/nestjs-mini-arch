@@ -8,7 +8,7 @@ export function generateDomain(name: string, options: GeneratorOptions = {}): vo
   const filePath = path.join(outputPath, fileName);
 
   const content = `import { Injectable } from '@nestjs/common';
-import { Domain, MiniDomain } from 'mini';
+import { Domain, MiniDomain } from 'nestjs-mini-arch';
 
 @Injectable()
 @MiniDomain('${name}')

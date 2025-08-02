@@ -8,7 +8,7 @@ export function generateJob(name: string, options: GeneratorOptions = {}): void 
   const filePath = path.join(outputPath, fileName);
 
   const content = `import { Injectable } from '@nestjs/common';
-import { Job, MiniJob } from 'mini';
+import { Job, MiniJob } from 'nestjs-mini-arch';
 
 export interface ${className}Data {
   // Define the data interface for this job

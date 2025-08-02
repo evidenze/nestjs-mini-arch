@@ -14,7 +14,7 @@ const program = new Command();
 program
   .name('mini')
   .description('Mini Framework CLI for NestJS clean architecture')
-  .version('1.1.1');
+  .version('1.1.2');
 
 // New project command
 program
