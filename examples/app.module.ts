@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { LucidModule } from '../src';
+import { LucidModule } from 'nest-lucid';
 import { UserModule } from './services/user/user.module';
 import { NotificationModule } from './services/notification/notification.module';
 

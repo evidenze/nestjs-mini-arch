@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Job, LucidJob } from '../../../src';
+import { Job, LucidJob } from 'nest-lucid';
 
 export interface CreateUserJobData {
   email: string;

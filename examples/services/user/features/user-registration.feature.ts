@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Feature, LucidFeature } from '../../../src';
+import { Feature, LucidFeature } from 'nest-lucid';
 import { CreateUserJob, CreateUserJobData } from '../jobs/create-user.job';
 import { SendEmailJob } from '../../notification/jobs/send-email.job';
 

@@ -12,7 +12,9 @@ module.exports = {
     '!src/**/index.ts',
   ],
   moduleNameMapping: {
-    '^nest-lucid$': '<rootDir>/src/index.ts',
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^@services/(.*)$': '<rootDir>/src/services/$1',
+    '^@domains/(.*)$': '<rootDir>/src/domains/$1',
+    '^@foundation/(.*)$': '<rootDir>/src/foundation/$1',
   },
 };
