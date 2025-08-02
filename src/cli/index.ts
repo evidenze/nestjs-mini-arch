@@ -1,17 +1,44 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import { generateJob } from '../generators/job-generator';
-import { generateFeature } from '../generators/feature-generator';
-import { generateService } from '../generators/service-generator';
-import { generateDomain } from '../generators/domain-generator';
+import { 
+  generateJob, 
+  generateFeature, 
+  generateService, 
+  generateDomain,
+  generateProject 
+} from '../generators';
 
 const program = new Command();
 
 program
   .name('mini')
-  .description('CLI for Mini architecture')
-  .version('1.0.0');
+  .description('Mini Framework CLI for NestJS clean architecture')
+  .version('1.1.0');
+
+// New project command
+program
+  .command('new')
+  .alias('n')
+  .description('Create a new NestJS project with Mini framework')
+  .argument('<name>', 'Project name')
+  .option('-d, --directory <dir>', 'Target directory (default: current directory)')
+  .option('-p, --package-manager <pm>', 'Package manager (npm, yarn, pnpm)', 'npm')
+  .option('--skip-install', 'Skip automatic dependency installation')
+  .action((name, options) => {
+    try {
+      generateProject(name, {
+        directory: options.directory,
+        packageManager: options.packageManager,
+        skipInstall: options.skipInstall
+      });
+    } catch (error) {
+      console.error('Error creating project:', error.message);
+      process.exit(1);
+    }
+  });
+
+// Generate job command
 
 program
   .command('generate:job')
