@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Job, MiniJob } from 'mini';
+import { Job, MiniJob } from '../../../../src/index';
 
 export interface SendEmailJobData {
   to: string;

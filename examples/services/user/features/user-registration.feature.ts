@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Feature, MiniFeature } from 'mini';
+import { Feature, MiniFeature } from '../../../../src/index';
 import { CreateUserJob, CreateUserJobData } from '../jobs/create-user.job';
 import { SendEmailJob } from '../../notification/jobs/send-email.job';
 

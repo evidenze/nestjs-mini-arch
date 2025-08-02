@@ -1,0 +1,50 @@
+# Source files
+src/
+test/
+examples/
+docs/
+
+# Build files
+tsconfig.json
+jest.config.js
+jest.config.new.js
+jest.config.old.js
+dist/tsconfig.tsbuildinfo
+
+# Development files
+.eslintrc.js
+.gitignore
+.git/
+
+# Documentation (except README)
+CONTRIBUTING.md
+CHANGELOG.md
+PROJECT_SUMMARY.md
+
+# Node modules and lock files
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files
+coverage/
+*.log
+
+# Temporary files
+*.tmp
+*.temp

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 
 /**
- * Base Service class for all services in the Nest Lucid architecture
+ * Base Service class for all services in the Mini architecture
  * Services represent bounded contexts or business domains
  */
 @Module({})

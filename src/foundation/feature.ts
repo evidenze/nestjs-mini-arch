@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Job } from './job';
 
 /**
- * Base Feature class for all features in the Nest Lucid architecture
+ * Base Feature class for all features in the Mini architecture
  * Features orchestrate multiple jobs to accomplish higher-level business operations
  */
 @Injectable()

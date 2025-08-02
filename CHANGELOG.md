@@ -8,14 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-08-02
 
 ### Added
-- Initial release of Nest Lucid
+- Initial release of Mini
 - Core architecture components (Job, Feature, Service, Domain)
 - CLI generators for all components
 - Comprehensive documentation
 - Example implementations
 - TypeScript support
 - Test utilities
-- LucidModule for easy integration
+- MiniModule for easy integration
 - Registry system for component management
 
 ### Features
@@ -23,16 +23,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Features**: High-level operations that orchestrate jobs
 - **Services**: Self-contained business domain modules  
 - **Domains**: Shared business logic across services
-- **CLI**: Powerful generators with `nest-lucid` command
+- **CLI**: Powerful generators with `mini` command
 - **Testing**: Built-in testing utilities and examples
 - **TypeScript**: Full TypeScript support with decorators
 - **NestJS Integration**: Seamless integration with NestJS ecosystem
 
 ### CLI Commands
-- `nest-lucid generate:job` - Generate new jobs
-- `nest-lucid generate:feature` - Generate new features
-- `nest-lucid generate:service` - Generate new services
-- `nest-lucid generate:domain` - Generate new domains
+- `mini generate:job` - Generate new jobs
+- `mini generate:feature` - Generate new features
+- `mini generate:service` - Generate new services
+- `mini generate:domain` - Generate new domains
 
 ### Documentation
 - Complete README with installation and usage guide

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
 /**
- * Base Job class for all jobs in the Nest Lucid architecture
+ * Base Job class for all jobs in the Mini architecture
  * Jobs are the smallest units of work that perform specific tasks
  */
 @Injectable()

@@ -11,8 +11,8 @@ module.exports = {
     '!src/**/*.d.ts',
     '!src/**/index.ts',
   ],
-  moduleNameMapper: {
-    '^nestjs-mini-arch$': '<rootDir>/src/index.ts',
+  moduleNameMapping: {
+    '^mini$': '<rootDir>/src/index.ts',
     '^@/(.*)$': '<rootDir>/src/$1',
   },
 };

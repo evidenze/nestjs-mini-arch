@@ -1,13 +1,13 @@
 # Mini
 
-A clean architectural framework for NestJS applications inspired by Laravel Lucid that promotes organized and scalable code structure.
+A clean architectural framework for NestJS applications inspired by Laravel's architectural patterns that promotes organized and scalable code structure.
 
 [![npm version](https://badge.fury.io/js/mini.svg)](https://badge.fury.io/js/mini)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🎯 Overview
 
-Mini brings the power and elegance of Laravel Lucid architecture to NestJS applications. It provides a structured approach to building scalable applications with clear separation of concerns, making your codebase more maintainable and testable.
+Mini brings the power and elegance of clean architecture to NestJS applications. It provides a structured approach to building scalable applications with clear separation of concerns, making your codebase more maintainable and testable.
 
 ## 🏗️ Architecture Components
 
@@ -324,7 +324,7 @@ export class UserValidationDomain extends Domain {
 
 ## 🧪 Testing
 
-Nest Lucid components are designed to be easily testable:
+Mini components are designed to be easily testable:
 
 ```typescript
 import { Test, TestingModule } from '@nestjs/testing';
@@ -445,15 +445,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Inspired by [Laravel Lucid](https://github.com/lucidarch/lucid) architecture
+- Inspired by [Laravel's architectural patterns](https://laravel.com/docs/architecture)
 - Built for the [NestJS](https://nestjs.com/) framework
 - Thanks to all contributors who help make this project better
 
 ## 📞 Support
 
-- 📖 [Documentation](https://github.com/your-username/nest-lucid/wiki)
-- 🐛 [Issues](https://github.com/your-username/nest-lucid/issues)
-- 💬 [Discussions](https://github.com/your-username/nest-lucid/discussions)
+- 📖 [Documentation](https://github.com/your-username/mini/wiki)
+- 🐛 [Issues](https://github.com/your-username/mini/issues)
+- 💬 [Discussions](https://github.com/your-username/mini/discussions)
 
 ---
 

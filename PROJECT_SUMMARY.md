@@ -1,11 +1,11 @@
-# 🎉 Nest Lucid - Complete Laravel Lucid Architecture for NestJS
+# 🎉 Mini - Complete Clean Architecture for NestJS
 
-I've successfully built a comprehensive NestJS framework inspired by Laravel Lucid architecture! Here's what has been created:
+I've successfully built a comprehensive NestJS framework called "Mini" inspired by Laravel's architectural patterns! Here's what has been created:
 
 ## 📁 Project Structure
 
 ```
-nest-lucid/
+mini/
 ├── 📄 README.md                    # Comprehensive documentation
 ├── 📄 package.json                 # NPM package configuration
 ├── 📄 tsconfig.json                # TypeScript configuration
@@ -20,10 +20,10 @@ nest-lucid/
 │   │   ├── 📄 feature.ts           # Base Feature class
 │   │   ├── 📄 service.ts           # Base Service class
 │   │   ├── 📄 domain.ts            # Base Domain class
-│   │   ├── 📄 lucid-module.ts      # NestJS module integration
-│   │   └── 📄 lucid-registry.ts    # Component registry
+│   │   ├── 📄 mini-module.ts       # NestJS module integration
+│   │   └── 📄 mini-registry.ts     # Component registry
 │   ├── 🗂️ decorators/              # TypeScript decorators
-│   │   └── 📄 index.ts             # Lucid decorators
+│   │   └── 📄 index.ts             # Mini decorators
 │   ├── 🗂️ interfaces/              # TypeScript interfaces
 │   │   └── 📄 index.ts             # Core interfaces
 │   ├── 🗂️ cli/                     # Command line interface
@@ -55,10 +55,10 @@ nest-lucid/
 - **Domains**: Pure business logic and rules
 
 ### ✅ CLI Generators
-- `nest-lucid g:job <name>` - Generate jobs
-- `nest-lucid g:feature <name>` - Generate features  
-- `nest-lucid g:service <name>` - Generate services
-- `nest-lucid g:domain <name>` - Generate domains
+- `mini g:job <name>` - Generate jobs
+- `mini g:feature <name>` - Generate features  
+- `mini g:service <name>` - Generate services
+- `mini g:domain <name>` - Generate domains
 
 ### ✅ TypeScript Support
 - Full TypeScript support with decorators
@@ -66,7 +66,7 @@ nest-lucid/
 - Comprehensive type definitions
 
 ### ✅ NestJS Integration
-- `LucidModule` for easy setup
+- `MiniModule` for easy setup
 - Injectable components
 - Compatible with NestJS ecosystem
 
@@ -85,30 +85,30 @@ nest-lucid/
 
 ### Install the package:
 ```bash
-npm install nest-lucid
+npm install mini
 ```
 
 ### Install CLI globally:
 ```bash
-npm install -g nest-lucid
+npm install -g mini
 ```
 
 ### Setup in your NestJS app:
 ```typescript
-import { LucidModule } from 'nest-lucid';
+import { MiniModule } from 'mini';
 
 @Module({
-  imports: [LucidModule.forRoot({ autoRegister: true })],
+  imports: [MiniModule.forRoot({ autoRegister: true })],
 })
 export class AppModule {}
 ```
 
 ### Generate components:
 ```bash
-nest-lucid g:job SendEmail --service notification
-nest-lucid g:feature UserRegistration --service user
-nest-lucid g:service Payment
-nest-lucid g:domain Pricing
+mini g:job SendEmail --service notification
+mini g:feature UserRegistration --service user
+mini g:service Payment
+mini g:domain Pricing
 ```
 
 ## 🎯 Example Usage
@@ -116,7 +116,7 @@ nest-lucid g:domain Pricing
 ### Job Example:
 ```typescript
 @Injectable()
-@LucidJob('SendEmail')
+@MiniJob('SendEmail')
 export class SendEmailJob extends Job {
   async handle(data: SendEmailData): Promise<any> {
     // Email sending logic
@@ -128,7 +128,7 @@ export class SendEmailJob extends Job {
 ### Feature Example:
 ```typescript
 @Injectable()
-@LucidFeature('UserRegistration')
+@MiniFeature('UserRegistration')
 export class UserRegistrationFeature extends Feature {
   async handle(data: UserData): Promise<any> {
     const user = await this.runJob(CreateUserJob, data);
@@ -168,7 +168,7 @@ To publish to GitHub and npm:
 1. **Create GitHub Repository:**
    ```bash
    # Create repository on GitHub first, then:
-   git remote add origin https://github.com/yourusername/nest-lucid.git
+   git remote add origin https://github.com/yourusername/mini.git
    git push -u origin main
    ```
 
@@ -181,7 +181,7 @@ To publish to GitHub and npm:
 
 ## 🎊 Summary
 
-This is a complete, production-ready architectural framework that brings Laravel Lucid's elegant architecture to the NestJS ecosystem. It includes:
+This is a complete, production-ready architectural framework that brings Laravel's elegant architecture to the NestJS ecosystem as "Mini". It includes:
 
 - ✅ Full source code with TypeScript
 - ✅ Working CLI with generators

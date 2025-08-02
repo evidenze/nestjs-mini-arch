@@ -1,8 +1,8 @@
-# Nest Lucid Architecture Guide
+# Mini Architecture Guide
 
 ## Introduction
 
-Nest Lucid is a Laravel Lucid-inspired architectural framework for NestJS that promotes clean, organized, and scalable code structure. This guide will help you understand the core concepts and implement them in your projects.
+Mini is a Laravel-inspired architectural framework for NestJS that promotes clean, organized, and scalable code structure. This guide will help you understand the core concepts and implement them in your projects.
 
 ## Core Principles
 
@@ -46,7 +46,7 @@ Jobs are the smallest units of work in the architecture. They should:
 **Example: Email Job**
 ```typescript
 @Injectable()
-@LucidJob('SendEmail')
+@MiniJob('SendEmail')
 export class SendEmailJob extends Job {
   constructor(private emailService: EmailService) {
     super();
@@ -82,7 +82,7 @@ Features represent use cases in your application. They:
 **Example: User Registration Feature**
 ```typescript
 @Injectable()
-@LucidFeature('UserRegistration')
+@MiniFeature('UserRegistration')
 export class UserRegistrationFeature extends Feature {
   async handle(data: UserRegistrationData): Promise<any> {
     // Start database transaction
@@ -152,7 +152,7 @@ Domains contain pure business logic:
 **Example: Pricing Domain**
 ```typescript
 @Injectable()
-@LucidDomain('Pricing')
+@MiniDomain('Pricing')
 export class PricingDomain extends Domain {
   calculateTax(amount: number, rate: number): number {
     if (amount < 0) throw new Error('Amount cannot be negative');
@@ -286,7 +286,7 @@ describe('UserRegistrationFeature', () => {
 ```typescript
 // Use configuration in jobs
 @Injectable()
-@LucidJob('SendEmail')
+@MiniJob('SendEmail')
 export class SendEmailJob extends Job {
   constructor(
     private emailService: EmailService,
@@ -312,7 +312,7 @@ export class SendEmailJob extends Job {
 
 ```typescript
 @Injectable()
-@LucidFeature('OrderProcessing')
+@MiniFeature('OrderProcessing')
 export class OrderProcessingFeature extends Feature {
   constructor(private logger: Logger) {
     super();
@@ -348,7 +348,7 @@ export class OrderProcessingFeature extends Feature {
 
 ```typescript
 @Injectable()
-@LucidFeature('UserRegistration')
+@MiniFeature('UserRegistration')
 export class UserRegistrationFeature extends Feature {
   constructor(private eventEmitter: EventEmitter2) {
     super();
@@ -373,7 +373,7 @@ export class UserRegistrationFeature extends Feature {
 
 ```typescript
 @Injectable()
-@LucidFeature('OrderProcessing')
+@MiniFeature('OrderProcessing')
 export class OrderProcessingFeature extends Feature {
   async handle(data: OrderData): Promise<any> {
     const saga = new OrderProcessingSaga();
@@ -405,7 +405,7 @@ export class OrderProcessingFeature extends Feature {
 ```typescript
 // Command side
 @Injectable()
-@LucidFeature('UpdateUserProfile')
+@MiniFeature('UpdateUserProfile')
 export class UpdateUserProfileFeature extends Feature {
   async handle(command: UpdateUserProfileCommand): Promise<void> {
     await this.runJob(ValidateUserProfileJob, command.data);
@@ -418,7 +418,7 @@ export class UpdateUserProfileFeature extends Feature {
 
 // Query side
 @Injectable()
-@LucidJob('GetUserProfile')
+@MiniJob('GetUserProfile')
 export class GetUserProfileJob extends Job {
   constructor(private readModelService: ReadModelService) {
     super();
@@ -430,4 +430,4 @@ export class GetUserProfileJob extends Job {
 }
 ```
 
-This guide provides a comprehensive understanding of how to implement and use the Nest Lucid architecture effectively in your NestJS applications.
+This guide provides a comprehensive understanding of how to implement and use the Mini architecture effectively in your NestJS applications.
