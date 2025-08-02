@@ -2,7 +2,7 @@
 
 A clean architectural framework for NestJS applications inspired by Laravel's architectural patterns that promotes organized and scalable code structure.
 
-[![npm version](https://badge.fury.io/js/mini.svg)](https://badge.fury.io/js/mini)
+[![npm version](https://badge.fury.io/js/nestjs-mini-arch.svg)](https://badge.fury.io/js/nestjs-mini-arch)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🎯 Overview
@@ -26,16 +26,16 @@ Shared business logic and rules that can be reused across multiple services.
 ## 📦 Installation
 
 ```bash
-npm install mini
+npm install nestjs-mini-arch
 # or
-yarn add mini
+yarn add nestjs-mini-arch
 ```
 
 For CLI usage, install globally:
 ```bash
-npm install -g mini
+npm install -g nestjs-mini-arch
 # or
-yarn global add mini
+yarn global add nestjs-mini-arch
 ```
 
 ## 🚀 Quick Start
@@ -45,7 +45,7 @@ yarn global add mini
 ```typescript
 // app.module.ts
 import { Module } from '@nestjs/common';
-import { MiniModule } from 'mini';
+import { MiniModule } from 'nestjs-mini-arch';
 
 @Module({
   imports: [
@@ -68,7 +68,7 @@ This generates:
 ```typescript
 // src/services/notification/jobs/send-email/send-email.job.ts
 import { Injectable } from '@nestjs/common';
-import { Job, MiniJob } from 'mini';
+import { Job, MiniJob } from 'nestjs-mini-arch';
 
 export interface SendEmailJobData {
   to: string;
@@ -96,7 +96,7 @@ mini generate:feature UserRegistration --service user
 ```typescript
 // src/services/user/features/user-registration/user-registration.feature.ts
 import { Injectable } from '@nestjs/common';
-import { Feature, MiniFeature } from 'mini';
+import { Feature, MiniFeature } from 'nestjs-mini-arch';
 import { CreateUserJob } from '../jobs/create-user/create-user.job';
 import { SendWelcomeEmailJob } from '../jobs/send-welcome-email/send-welcome-email.job';
 
@@ -230,7 +230,7 @@ src/
 
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { Job, MiniJob } from 'mini';
+import { Job, MiniJob } from 'nestjs-mini-arch';
 
 @Injectable()
 @MiniJob('CalculateTotal')
@@ -246,7 +246,7 @@ export class CalculateTotalJob extends Job {
 
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { Feature, MiniFeature } from 'mini';
+import { Feature, MiniFeature } from 'nestjs-mini-arch';
 
 @Injectable()
 @MiniFeature('ProcessOrder')
@@ -285,7 +285,7 @@ export class ProcessOrderFeature extends Feature {
 
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { Domain, MiniDomain } from 'mini';
+import { Domain, MiniDomain } from 'nestjs-mini-arch';
 
 @Injectable()
 @MiniDomain('UserValidation')
@@ -451,9 +451,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 📖 [Documentation](https://github.com/your-username/mini/wiki)
-- 🐛 [Issues](https://github.com/your-username/mini/issues)
-- 💬 [Discussions](https://github.com/your-username/mini/discussions)
+- 📖 [Documentation](https://github.com/evidenze/nestjs-mini-arch/wiki)
+- 🐛 [Issues](https://github.com/evidenze/nestjs-mini-arch/issues)
+- 💬 [Discussions](https://github.com/evidenze/nestjs-mini-arch/discussions)
 
 ---
 
