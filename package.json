@@ -1,6 +1,6 @@
 {
   "name": "nestjs-mini-arch",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A clean architectural framework for NestJS applications inspired by Laravel Lucid",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
