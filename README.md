@@ -23,7 +23,29 @@ Self-contained modules that handle specific business domains. Services group rel
 ### Domains
 Shared business logic and rules that can be reused across multiple services.
 
-## 📦 Installation
+## 📦 Installation & Quick Start
+
+### Option 1: Create a New Project (Recommended)
+
+Create a new NestJS project with Mini framework in one command:
+
+```bash
+# Install Mini CLI globally
+npm install -g nestjs-mini-arch
+
+# Create a new project
+mini new my-awesome-app
+
+# Navigate to project
+cd my-awesome-app
+
+# Start development server
+npm run start:dev
+```
+
+Your Mini-powered NestJS application will be ready at `http://localhost:3000` 🚀
+
+### Option 2: Add to Existing Project
 
 ```bash
 npm install nestjs-mini-arch
@@ -31,14 +53,14 @@ npm install nestjs-mini-arch
 yarn add nestjs-mini-arch
 ```
 
-For CLI usage, install globally:
+For CLI usage in existing projects:
 ```bash
 npm install -g nestjs-mini-arch
 # or
 yarn global add nestjs-mini-arch
 ```
 
-## 🚀 Quick Start
+## 🚀 Manual Setup (if not using `mini new`)
 
 ### 1. Set up your NestJS application
 
@@ -133,6 +155,23 @@ mini generate:domain User
 ## 🎮 CLI Commands
 
 The Mini CLI provides powerful generators to scaffold your architecture components:
+
+### Create New Project
+```bash
+mini new <project-name> [options]
+# or
+mini n <project-name> [options]
+
+Options:
+  -d, --directory <dir>           Target directory (default: current directory)
+  -p, --package-manager <pm>      Package manager: npm, yarn, pnpm (default: npm)
+  --skip-install                  Skip automatic dependency installation
+
+Examples:
+  mini new my-awesome-app
+  mini new my-app --package-manager yarn
+  mini new my-app --directory ./projects --skip-install
+```
 
 ### Generate Job
 ```bash
